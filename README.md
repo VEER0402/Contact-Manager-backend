@@ -120,5 +120,157 @@ Updated Screen
 
 ========================================================================================================================================================================================
 
+🧩 Step-by-Step Development Process
+
+
+Step 0: Project Requirement
+
+Build a Contact Manager module like real enterprise projects where:
+
+Backend exposes APIs
+
+Frontend consumes APIs
+
+Database stores persistent data
+
+
+========================================================================================================================================================================================
+
+✌️ Step 1: Backend Project Setup
+
+Created Spring Boot project from start.spring.io
+
+Selected:
+
+Maven
+
+Java 17
+
+Spring Web
+
+Spring Data JPA
+
+MySQL Driver
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 2: Database Configuration
+
+Configured MySQL connection in application.properties:
+
+spring.datasource.url=jdbc:mysql://localhost:3306/contactdb
+spring.datasource.username=contactuser
+spring.datasource.password=*****
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+
+========================================================================================================================================================================================
+
+
+
+
+✌️ Step 3: Entity (Model)
+
+Created Contact entity
+
+Mapped Java fields to MySQL columns using JPA annotations
+
+This represents one row in DB
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 4: Repository Layer
+
+Created ContactRepository
+
+Extended JpaRepository
+
+No SQL written manually — Hibernate handles it
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 5: Service Layer
+
+Created ContactService interface (defines WHAT app can do)
+
+Created ContactServiceImpl (defines HOW it does)
+
+Business logic lives here
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 6: Controller Layer (REST APIs)
+
+Exposed endpoints like:
+
+GET /api/contacts
+
+POST /api/contacts
+
+PUT /api/contacts/{id}
+
+DELETE /api/contacts/{id}
+
+This is what frontend/Postman talks to
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 7: API Testing
+
+Tested all APIs using Postman
+
+Verified DB updates using MySQL Workbench
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 8: Angular Frontend Setup
+
+Created Angular app using ng new
+
+Enabled routing
+
+Used pure CSS (no Bootstrap)
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 9: Angular ↔ Backend Integration
+
+Created ContactService in Angular
+
+Used HttpClient to call Spring Boot APIs
+
+Fixed CORS issues in backend
+
+
+========================================================================================================================================================================================
+
+
+✌️ Step 10: UI + CRUD Operations
+
+Display contacts in table
+
+Add Contact popup
+
+Edit Contact using same popup
+
+Delete contact
+
+UI automatically refreshes from backend
+
 
 
